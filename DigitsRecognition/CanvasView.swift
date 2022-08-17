@@ -13,21 +13,17 @@ struct CanvasView: View {
     
     private let canvasSize = UIScreen.main.bounds.width - 60
     
-    private let gradient = LinearGradient(
-        gradient: Gradient(colors: [.red, .blue]),
-        startPoint: .top,
-        endPoint: .bottom)
+    private let gradient = LinearGradient(colors: [Color("gradientOne"), Color("gradientTwo")], startPoint: .trailing, endPoint: .leading)
     
-    
-    
+
     var body: some View {
+
         Canvas { context, size in
-            context.draw(Text("lalal"), at: CGPoint(x: size.width / 2, y: size.height / 2))
-            
+            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Drawing Code@*/ /*@END_MENU_TOKEN@*/
         }.frame(width: canvasSize, height: canvasSize, alignment: .center)
-            .border(.blue)
-            .cornerRadius(15)
             .overlay(RoundedRectangle(cornerRadius: 15).stroke(gradient, lineWidth: 8))
+            .background(.white)
+        
 //            .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local).onChanged({ value in
 //                let newPoint = value.location
 //            }))
