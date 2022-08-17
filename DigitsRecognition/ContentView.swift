@@ -9,8 +9,26 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+        VStack(alignment: .center, spacing: 80) {
+            CanvasView()
+            Text("2")
+                .foregroundColor(.red)
+                .font(.system(size: 70))
+                .fontWeight(.heavy)
+                
+            Spacer()
+        }.padding(.top, 40)
+        .navigationTitle("DigsReco")
+     //   .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button("Clear") {
+                    print("Clear tapped")
+                }
+            }
+        }
+        }
     }
 }
 
