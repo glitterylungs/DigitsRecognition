@@ -9,7 +9,8 @@ import SwiftUI
 
 struct CanvasView: View {
     
-    //@State private var lines = [CGPoint()]
+    @State private var currentLine = Line()
+    @State private var lines: [Line] = []
     
     private let canvasSize = UIScreen.main.bounds.width - 60
     
@@ -19,14 +20,25 @@ struct CanvasView: View {
     var body: some View {
 
         Canvas { context, size in
-            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Drawing Code@*/ /*@END_MENU_TOKEN@*/
+            
+            for line in lines {
+                var path = Path()
+                path.addLines(line.points)
+                context.stroke(path, with: .color(line.color), lineWidth: line.lineWidth)
+            }
         }.frame(width: canvasSize, height: canvasSize, alignment: .center)
             .overlay(RoundedRectangle(cornerRadius: 15).stroke(gradient, lineWidth: 8))
             .background(.white)
-        
-//            .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local).onChanged({ value in
-//                let newPoint = value.location
-//            }))
+            .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local)
+                .onChanged({ value in
+                    let newPoint = value.location
+                    currentLine.points.append(newPoint)
+                    self.lines.append(currentLine)
+            })
+                .onEnded({ value in
+                    self.currentLine = Line(points: [])
+                })
+            )
     }
 }
 
