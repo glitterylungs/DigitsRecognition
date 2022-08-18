@@ -35,7 +35,6 @@ struct ContentView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         print("Clear tapped")
-                        
                     } label: {
                         Image(systemName: "trash")
                             .foregroundColor(Color("trashColor"))
