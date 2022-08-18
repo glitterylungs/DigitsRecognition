@@ -37,6 +37,7 @@ struct CanvasView: View {
             })
                 .onEnded({ value in
                     self.currentLine = Line(points: [])
+                   
                 })
             )
     }

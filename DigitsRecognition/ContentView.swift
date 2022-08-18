@@ -18,9 +18,16 @@ struct ContentView: View {
         NavigationView {
             VStack(alignment: .center, spacing: 80) {
                 CanvasView()
-                Text("2")
-                    .foregroundColor(Color("textColor"))
-                    .font(.system(size: 80, weight: .heavy, design: .default))
+                Button {
+                    print("Predict tapped")
+                } label: {
+                    Label("Predict", systemImage: "brain.head.profile")
+                }
+                .padding()
+                .padding(.horizontal, 40)
+                .font(.system(size: 20, weight: .medium, design: .default))
+                .foregroundColor(Color("textColor"))
+                .background(Color("trashColor").cornerRadius(40).opacity(0.5).shadow(color: Color("textColor"), radius: 10))
                 Spacer()
             }.padding(.top, 40)
             .navigationTitle("DigsReco")
@@ -28,6 +35,7 @@ struct ContentView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         print("Clear tapped")
+                        
                     } label: {
                         Image(systemName: "trash")
                             .foregroundColor(Color("trashColor"))
@@ -51,3 +59,8 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 
+
+
+//Text("2")
+//    .foregroundColor(Color("textColor"))
+//    .font(.system(size: 80, weight: .heavy, design: .default))
