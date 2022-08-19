@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F4F76A528B0269D0084CE9B /* MNISTClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4F4F76A428B0269D0084CE9B /* MNISTClassifier.mlmodel */; };
+		4F4F76A828B040AF0084CE9B /* PrepareImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4F76A728B040AF0084CE9B /* PrepareImage.swift */; };
 		4F52A48428AC478200D72CE4 /* DigitsRecognitionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F52A48328AC478200D72CE4 /* DigitsRecognitionApp.swift */; };
 		4F52A48628AC478200D72CE4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F52A48528AC478200D72CE4 /* ContentView.swift */; };
 		4F52A48828AC478400D72CE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F52A48728AC478400D72CE4 /* Assets.xcassets */; };
@@ -16,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F4F76A428B0269D0084CE9B /* MNISTClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MNISTClassifier.mlmodel; sourceTree = "<group>"; };
+		4F4F76A628B02F020084CE9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4F4F76A728B040AF0084CE9B /* PrepareImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareImage.swift; sourceTree = "<group>"; };
 		4F52A48028AC478200D72CE4 /* DigitsRecognition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitsRecognition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F52A48328AC478200D72CE4 /* DigitsRecognitionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsRecognitionApp.swift; sourceTree = "<group>"; };
 		4F52A48528AC478200D72CE4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,11 +60,14 @@
 		4F52A48228AC478200D72CE4 /* DigitsRecognition */ = {
 			isa = PBXGroup;
 			children = (
+				4F4F76A628B02F020084CE9B /* Info.plist */,
 				4F52A48328AC478200D72CE4 /* DigitsRecognitionApp.swift */,
 				4F52A49528ADA67C00D72CE4 /* Line.swift */,
+				4F4F76A728B040AF0084CE9B /* PrepareImage.swift */,
 				4F52A48528AC478200D72CE4 /* ContentView.swift */,
 				4F52A49328AC5CB500D72CE4 /* CanvasView.swift */,
 				4F52A48728AC478400D72CE4 /* Assets.xcassets */,
+				4F4F76A428B0269D0084CE9B /* MNISTClassifier.mlmodel */,
 				4F52A48928AC478400D72CE4 /* Preview Content */,
 			);
 			path = DigitsRecognition;
@@ -147,6 +155,8 @@
 				4F52A49628ADA67C00D72CE4 /* Line.swift in Sources */,
 				4F52A48428AC478200D72CE4 /* DigitsRecognitionApp.swift in Sources */,
 				4F52A49428AC5CB500D72CE4 /* CanvasView.swift in Sources */,
+				4F4F76A528B0269D0084CE9B /* MNISTClassifier.mlmodel in Sources */,
+				4F4F76A828B040AF0084CE9B /* PrepareImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +288,8 @@
 				DEVELOPMENT_TEAM = 28TZUHU66D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DigitsRecognition/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = duppa;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -308,6 +320,8 @@
 				DEVELOPMENT_TEAM = 28TZUHU66D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DigitsRecognition/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = duppa;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

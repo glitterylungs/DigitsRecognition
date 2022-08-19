@@ -13,9 +13,6 @@ struct CanvasView: View {
     @Binding var lines: [Line]
     
     private let canvasSize = UIScreen.main.bounds.width - 60
-    
-    private let gradient = LinearGradient(colors: [Color("gradientOne"), Color("gradientTwo")], startPoint: .trailing, endPoint: .leading)
-    
 
     var body: some View {
 
@@ -28,8 +25,6 @@ struct CanvasView: View {
             }
         }.frame(width: canvasSize, height: canvasSize, alignment: .center)
             .background(.white)
-            .cornerRadius(15)
-            .overlay(RoundedRectangle(cornerRadius: 15).stroke(gradient, lineWidth: 9))
             .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local)
                 .onChanged({ value in
                     let newPoint = value.location
