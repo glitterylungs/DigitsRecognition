@@ -10,7 +10,7 @@ import SwiftUI
 struct CanvasView: View {
     
     @State private var currentLine = Line()
-    @State var lines: [Line] = []
+    @Binding var lines: [Line]
     
     private let canvasSize = UIScreen.main.bounds.width - 60
     
@@ -47,6 +47,6 @@ struct CanvasView: View {
 
 struct CanvasView_Previews: PreviewProvider {
     static var previews: some View {
-        CanvasView()
+        CanvasView(lines: .constant([]))
     }
 }

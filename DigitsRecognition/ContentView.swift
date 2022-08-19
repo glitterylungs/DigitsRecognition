@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State private var lines: [Line] = []
+    
     init() {
             //Use this if NavigationBarTitle is with Large Font
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(named: "trashColor") as Any]
@@ -17,7 +19,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .center, spacing: 80) {
-                CanvasView()
+                CanvasView(lines: $lines)
                 Button {
                     print("Predict tapped")
                 } label: {
@@ -35,6 +37,7 @@ struct ContentView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         print("Clear tapped")
+                        lines = []
                     } label: {
                         Image(systemName: "trash")
                             .foregroundColor(Color("trashColor"))
