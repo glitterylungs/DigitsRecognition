@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreML
+import Vision
 
 
 extension View {
@@ -33,8 +34,6 @@ struct ContentView: View {
     @State private var classificationLabel: String = ""
     private let canvasSize = UIScreen.main.bounds.width - 20
     private let gradient = LinearGradient(colors: [Color("gradientOne"), Color("gradientTwo")], startPoint: .trailing, endPoint: .leading)
-    
-    let mnistModel = MNISTClassifier()
     
     
     init() {
@@ -82,16 +81,31 @@ struct ContentView: View {
     }
     
     private func classifyImage(image: UIImage) {
-        let resizedImage = image.imageResized(to: CGSize(width: 280, height: 280))
-        
-        guard let buffer = resizedImage.convertToBuffer() else {
-            fatalError("can't convert uiImage to CVPPixelBuffer")
+        let resizedImage = image.imageResized(to: CGSize(width: 28, height: 28))
+        guard let ciImage = CIImage(image: resizedImage) else {
+            fatalError("can't convert to ciiimage")
         }
-        UIImageWriteToSavedPhotosAlbum(resizedImage, nil, nil, nil)
-        let result = try? mnistModel.prediction(image: buffer)
-        print(result?.classLabel ?? 10)
+        
+        guard let mnistModel = try? VNCoreMLModel(for: MNISTClassifier().model) else {
+            fatalError("Loading coreML model failed")
+        }
+        
+        let request = VNCoreMLRequest(model: mnistModel) { request, error in
+            guard let results = request.results as? [VNClassificationObservation] else {
+                fatalError("Failed to process image")
+            }
+            print(results.first?.identifier ?? "10")
+        }
+        
+        let handler = VNImageRequestHandler(ciImage: ciImage)
+        
+        do {
+            try handler.perform([request])
+        }
+        catch {
+            print(error)
+        }
     }
-    
 }
 
 struct ContentView_Previews: PreviewProvider {
