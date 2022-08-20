@@ -8,6 +8,9 @@
 import Foundation
 import UIKit
 
+// Extension for resizing UIImage
+// For MNIST model we need 28x28 image
+
 extension UIImage {
     
     func imageResized(to size: CGSize) -> UIImage {
