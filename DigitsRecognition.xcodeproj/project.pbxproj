@@ -41,6 +41,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F4F76A928B05DA50084CE9B /* Identifiable */ = {
+			isa = PBXGroup;
+			children = (
+				4F52A49528ADA67C00D72CE4 /* Line.swift */,
+				4F4F76A728B040AF0084CE9B /* PrepareImage.swift */,
+			);
+			path = Identifiable;
+			sourceTree = "<group>";
+		};
+		4F4F76AA28B05DBF0084CE9B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4F52A48528AC478200D72CE4 /* ContentView.swift */,
+				4F52A49328AC5CB500D72CE4 /* CanvasView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4F4F76AB28B05DD20084CE9B /* Observed */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Observed;
+			sourceTree = "<group>";
+		};
 		4F52A47728AC478200D72CE4 = {
 			isa = PBXGroup;
 			children = (
@@ -60,12 +85,11 @@
 		4F52A48228AC478200D72CE4 /* DigitsRecognition */ = {
 			isa = PBXGroup;
 			children = (
+				4F4F76A928B05DA50084CE9B /* Identifiable */,
+				4F4F76AA28B05DBF0084CE9B /* View */,
+				4F4F76AB28B05DD20084CE9B /* Observed */,
 				4F4F76A628B02F020084CE9B /* Info.plist */,
 				4F52A48328AC478200D72CE4 /* DigitsRecognitionApp.swift */,
-				4F52A49528ADA67C00D72CE4 /* Line.swift */,
-				4F4F76A728B040AF0084CE9B /* PrepareImage.swift */,
-				4F52A48528AC478200D72CE4 /* ContentView.swift */,
-				4F52A49328AC5CB500D72CE4 /* CanvasView.swift */,
 				4F52A48728AC478400D72CE4 /* Assets.xcassets */,
 				4F4F76A428B0269D0084CE9B /* MNISTClassifier.mlmodel */,
 				4F52A48928AC478400D72CE4 /* Preview Content */,
