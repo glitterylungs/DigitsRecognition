@@ -14,11 +14,11 @@ extension ContentView {
     @MainActor class ViewModel: ObservableObject {
         @Published var lines: [Line] = []
         @Published var classificationLabel: String = ""
-        
+        @Published var isPresented = false
+
         func clearCanvas() {
             lines = []
         }
-        
         
         func classifyImage(image: UIImage) {
             
@@ -40,7 +40,8 @@ extension ContentView {
                 guard let results = request.results as? [VNClassificationObservation] else {
                     fatalError("Failed to process image")
                 }
-                print(results.first?.identifier ?? "10")
+                // Set result value
+                self.classificationLabel = results.first?.identifier ?? "10"
             }
             
             // Passing image to the model
