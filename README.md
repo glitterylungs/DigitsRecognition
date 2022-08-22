@@ -32,6 +32,8 @@ MNISTClassifier.mlmodel is available on the official Apple Developer site. It wa
 
 # Getting Started
 
-Clone the Repository
+* Clone the Repository
 
-# Licence
+# License
+
+* Distributed under the MIT license. See [LICENSE](https://github.com/glitterylungs/DigitsRecognition/blob/main/LICENSE.md) for more information.
